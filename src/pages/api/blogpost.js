@@ -7,8 +7,10 @@ import blog from "./blogschema"
 export default async function handler(req, res) {
   dbConnect();
   if (req.method == 'POST') {
+    
     const blogpost = await new blog(JSON.parse(req.body))
     blogpost.save()
+    console.log(blogpost);
     await res.status(201).json({ success: true, data: blogpost })
   }
   else if (req.method == 'GET') {

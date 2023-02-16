@@ -6,7 +6,7 @@ export default async function handler (req, res) {
     {
         console.log(req.query.id);
         if(req.query.id !== "undefined"){
-            const blogdetail = await blog.findOne({posttitle: req.query.id});
+            const blogdetail = await blog.findOne({urlstructure: req.query.id});
             try{
                 res.send(blogdetail)
                 console.log("get")
