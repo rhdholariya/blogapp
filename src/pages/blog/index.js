@@ -5,7 +5,7 @@ export default function blog() {
     const [bloglist , setbloglist] = useState([])
     let data;
      useEffect(()=>{
-       data =  fetch('http://localhost:3000/api/blogpost')
+       data =  fetch('https://veenom.in/api/blogpost')
         .then(res => res.json())
         .then(data => {
             setbloglist(data)
